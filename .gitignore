@@ -1,0 +1,33 @@
+# Kotlin / Gradle
+.gradle/
+build/
+.kotlin/
+!gradle/wrapper/gradle-wrapper.jar
+.idea/
+*.iml
+*.log
+
+# Local config
+local.properties
+
+# macOS
+.DS_Store
+
+# Android
+.cxx/
+.externalNativeBuild/
+captures/
+
+# iOS / Xcode
+*.xcworkspace
+*.xcuserstate
+*.xcuserdata/
+DerivedData/
+Pods/
+
+# Compose / Desktop
+out/
+bin/
+
+# VS Code / JetBrains Rider
+.vscode/
