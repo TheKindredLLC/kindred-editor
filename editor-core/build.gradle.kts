@@ -1,5 +1,6 @@
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
+    alias(libs.plugins.kotlinSerialization)
 }
 
 kotlin {
@@ -21,7 +22,8 @@ kotlin {
     sourceSets {
         commonMain {
             dependencies {
-                // e.g. kotlinx.serialization, emoji registry, etc.
+                implementation(libs.kotlinx.serialization)
+                implementation(libs.kotlinx.uuid)
             }
         }
         commonTest {

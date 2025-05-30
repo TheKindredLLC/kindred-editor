@@ -2,7 +2,9 @@
 
 **A portable, extensible, and cross-platform post editor model built for Kotlin Multiplatform.**
 
-`kindred-editor` provides a rich, structured foundation for composing and rendering posts across social, blogging, and community platforms. It is designed to be UI-agnostic, render-consistent, and easy to integrate into Kotlin applications on Web, Android, iOS, or Desktop.
+`kindred-editor` provides a rich, structured foundation for composing and rendering posts across social, blogging, and community platforms. It is designed to be completely UI-agnostic, render-consistent, and easy to integrate into Kotlin applications on Web, Android, iOS, or Desktop.
+
+> **Note:** This project intentionally does not include any UI components. The UI implementation is the responsibility of the consuming project that implements this module.
 
 ---
 
@@ -32,14 +34,9 @@
 
 ## 📦 Module Overview
 
-| Module                     | Purpose                                             |
-|----------------------------|-----------------------------------------------------|
-| `editor-core`              | Shared model & logic (EditorBlock, TextChunk, etc.) |
-| `editor-render-kobweb`     | Kobweb rendering implementation                     |
-| `editor-render-compose`    | Compose Multiplatform rendering                     |
-| `editor-assets` (optional) | Shared emoji/media asset registry                   |
-| `demo-web-kobweb`          | Live testbed app for editor & preview               |
-| `demo-compose-preview`     | Compose Desktop test harness                        |
+| Module                     | Purpose                                                                |
+|----------------------------|------------------------------------------------------------------------|
+| `editor-core`              | Shared model & business logic (EditorBlock, TextChunk, etc.) - UI-free |
 
 ---
 
