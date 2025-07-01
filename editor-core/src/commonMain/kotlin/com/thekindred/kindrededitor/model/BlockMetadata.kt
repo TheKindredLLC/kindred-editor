@@ -1,6 +1,6 @@
 package com.thekindred.kindrededitor.model
 
-import com.thekindred.kindrededitor.util.InstantSerializer
+import com.thekindred.kindrededitor.util.serialization.InstantSerializer
 import kotlinx.serialization.Serializable
 import kotlin.time.Clock
 import kotlin.time.ExperimentalTime

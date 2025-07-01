@@ -11,6 +11,8 @@ import kotlinx.serialization.Serializable
 @Serializable
 enum class Alignment {
     AUTO,
+    START,
+    END,
     LEFT,
     CENTER,
     RIGHT,

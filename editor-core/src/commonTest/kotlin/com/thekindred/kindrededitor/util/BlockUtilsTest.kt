@@ -2,11 +2,14 @@ package com.thekindred.kindrededitor.util
 
 import com.thekindred.kindrededitor.model.EditorBlock
 import com.thekindred.kindrededitor.model.TextChunk
+import com.thekindred.kindrededitor.util.text.BlockUtils
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertFalse
 import kotlin.test.assertTrue
+import kotlin.uuid.ExperimentalUuidApi
 
+@OptIn(ExperimentalUuidApi::class)
 class BlockUtilsTest {
 
     @Test

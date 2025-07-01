@@ -5,7 +5,9 @@ import com.thekindred.kindrededitor.model.PostDocument
 import com.thekindred.kindrededitor.model.TextChunk
 import kotlin.test.Test
 import kotlin.test.assertEquals
+import kotlin.uuid.ExperimentalUuidApi
 
+@OptIn(ExperimentalUuidApi::class)
 class EditorSessionTest {
 
     @Test

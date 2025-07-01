@@ -1,5 +1,6 @@
 package com.thekindred.kindrededitor.util
 
+import com.thekindred.kindrededitor.util.media.EmojiRegistry
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertNull
