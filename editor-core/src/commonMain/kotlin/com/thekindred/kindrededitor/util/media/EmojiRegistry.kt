@@ -1,4 +1,4 @@
-package com.thekindred.kindrededitor.util
+package com.thekindred.kindrededitor.util.media
 
 import com.thekindred.kindrededitor.model.EmojiToken
 

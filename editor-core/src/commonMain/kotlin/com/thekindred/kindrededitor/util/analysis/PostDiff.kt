@@ -1,4 +1,4 @@
-package com.thekindred.kindrededitor.util
+package com.thekindred.kindrededitor.util.analysis
 
 import com.thekindred.kindrededitor.model.PostChangeSummary
 import com.thekindred.kindrededitor.model.PostDocument

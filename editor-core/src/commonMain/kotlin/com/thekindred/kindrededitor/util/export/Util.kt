@@ -1,4 +1,4 @@
-package com.thekindred.kindrededitor.util
+package com.thekindred.kindrededitor.util.export
 
 import com.thekindred.kindrededitor.model.CaptionTrack
 

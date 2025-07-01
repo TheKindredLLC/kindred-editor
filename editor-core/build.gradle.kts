@@ -29,6 +29,8 @@ kotlin {
         commonTest {
             dependencies {
                 implementation(libs.kotlin.test)
+                implementation(libs.kotlinx.serialization)
+                implementation(libs.kotlinx.uuid)
             }
         }
     }

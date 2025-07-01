@@ -1,4 +1,4 @@
-package com.thekindred.kindrededitor.util
+package com.thekindred.kindrededitor.util.export
 
 /**
  * Utility to programmatically build a WebVTT (Web Video Text Tracks) subtitle file.
@@ -6,7 +6,7 @@ package com.thekindred.kindrededitor.util
  */
 class WebVttBuilder {
 
-    private val cues = mutableListOf<Cue>()
+    val cues = mutableListOf<Cue>()
 
     /**
      * Adds a single caption cue to the VTT file.
@@ -31,5 +31,5 @@ class WebVttBuilder {
         }
     }
 
-    private data class Cue(val start: String, val end: String, val text: String)
+    data class Cue(val start: String, val end: String, val text: String)
 }

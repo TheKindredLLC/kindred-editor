@@ -1,4 +1,4 @@
-package com.thekindred.kindrededitor.util
+package com.thekindred.kindrededitor.util.validation
 
 import com.thekindred.kindrededitor.model.EditorBlock
 import com.thekindred.kindrededitor.model.PostDocument
@@ -131,6 +131,107 @@ fun validate(
 
                 is EditorBlock.Divider -> {
                     // No validation required
+                }
+
+                is EditorBlock.Embed -> {
+                    if (block.url.isBlank()) {
+                        errors.add(
+                            ValidationError(
+                                message = "Embed block is missing a URL.",
+                                blockIndex = index,
+                                userMessage = "One of your embeds doesn’t have a valid link."
+                            )
+                        )
+                    }
+                    if (block.aspectRatio != null && block.aspectRatio <= 0.0) {
+                        errors.add(
+                            ValidationError(
+                                message = "Embed block has invalid aspect ratio: ${block.aspectRatio}",
+                                blockIndex = index,
+                                userMessage = "Embedded media has a broken size ratio. Try resetting or removing it."
+                            )
+                        )
+                    }
+                }
+
+                is EditorBlock.Heading -> {
+                    if (block.text.isBlank()) {
+                        errors.add(
+                            ValidationError(
+                                message = "Heading block is empty.",
+                                blockIndex = index,
+                                userMessage = "You included a heading but didn’t write anything in it."
+                            )
+                        )
+                    }
+                    if (block.level !in 1..6) {
+                        errors.add(
+                            ValidationError(
+                                message = "Heading level ${block.level} is out of range (1–6).",
+                                blockIndex = index,
+                                userMessage = "A heading level is invalid. Try using H1 to H6 only."
+                            )
+                        )
+                    }
+                }
+
+                is EditorBlock.ListBlock -> {
+                    if (block.items.isEmpty()) {
+                        errors.add(
+                            ValidationError(
+                                message = "List block has no items.",
+                                blockIndex = index,
+                                userMessage = "You created a list block but didn’t add any items."
+                            )
+                        )
+                    } else {
+                        block.items.forEachIndexed { itemIndex, item ->
+                            if (item.chunks.all { it.text.isBlank() }) {
+                                errors.add(
+                                    ValidationError(
+                                        message = "List item #${itemIndex + 1} is empty.",
+                                        blockIndex = index,
+                                        userMessage = "One of your list items is empty. Consider removing or editing it."
+                                    )
+                                )
+                            }
+                        }
+                    }
+                }
+
+                is EditorBlock.Table -> {
+                    if (block.rows.isEmpty()) {
+                        errors.add(
+                            ValidationError(
+                                message = "Table block has no rows.",
+                                blockIndex = index,
+                                userMessage = "You added a table but didn’t include any rows."
+                            )
+                        )
+                    } else {
+                        block.rows.forEachIndexed { rowIndex, row ->
+                            if (row.cells.isEmpty()) {
+                                errors.add(
+                                    ValidationError(
+                                        message = "Table row #${rowIndex + 1} has no cells.",
+                                        blockIndex = index,
+                                        userMessage = "A row in your table has no columns. Add at least one cell."
+                                    )
+                                )
+                            }
+                            row.cells.forEachIndexed { cellIndex, cell ->
+                                if (cell.chunks.all { it.text.isBlank() }) {
+                                    errors.add(
+                                        ValidationError(
+                                            message = "Cell [$rowIndex][$cellIndex] in table is empty.",
+                                            blockIndex = index,
+                                            userMessage = "There’s an empty cell in your table. Consider removing or filling it."
+                                        )
+                                    )
+                                }
+                            }
+                        }
+                    }
                 }
             }
 

@@ -1,4 +1,4 @@
-package com.thekindred.kindrededitor.util
+package com.thekindred.kindrededitor.util.media
 
 import com.thekindred.kindrededitor.interfaces.CaptionGenerator
 import com.thekindred.kindrededitor.model.CaptionTrack
@@ -19,7 +19,10 @@ object NoOpCaptionGenerator : CaptionGenerator {
      */
     override suspend fun generateCaptions(videoUrl: String): CaptionTrack {
         return CaptionTrack(
-            cues = emptyList()
+            src = "about:blank",
+            format = "vtt",
+            language = null,
+            label = "No Captions"
         )
     }
 }

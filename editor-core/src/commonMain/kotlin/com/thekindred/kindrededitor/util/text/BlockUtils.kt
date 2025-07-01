@@ -1,4 +1,4 @@
-package com.thekindred.kindrededitor.util
+package com.thekindred.kindrededitor.util.text
 
 import com.thekindred.kindrededitor.model.EditorBlock
 import com.thekindred.kindrededitor.model.TextChunk

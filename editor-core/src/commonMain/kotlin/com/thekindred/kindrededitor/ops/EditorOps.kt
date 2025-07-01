@@ -3,12 +3,14 @@ package com.thekindred.kindrededitor.ops
 import com.thekindred.kindrededitor.model.EditorBlock
 import com.thekindred.kindrededitor.model.enums.StyleFlag
 import com.thekindred.kindrededitor.model.TextChunk
+import kotlin.uuid.ExperimentalUuidApi
 
 /**
  * Utility functions for programmatic editing of [EditorBlock] and [TextChunk] content.
  *
  * Intended for backend use, preprocessing, or editor-layer manipulation.
  */
+@OptIn(ExperimentalUuidApi::class)
 object EditorOps {
 
     /**

@@ -1,4 +1,4 @@
-package com.thekindred.kindrededitor.util
+package com.thekindred.kindrededitor.util.text
 
 /**
  * A utility for identifying and extracting mention-like tokens from text.

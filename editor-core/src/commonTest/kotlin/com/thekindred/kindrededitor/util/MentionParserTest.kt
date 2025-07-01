@@ -1,5 +1,6 @@
 package com.thekindred.kindrededitor.util
 
+import com.thekindred.kindrededitor.util.text.MentionParser
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
