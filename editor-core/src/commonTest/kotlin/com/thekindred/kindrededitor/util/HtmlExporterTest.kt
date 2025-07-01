@@ -54,7 +54,10 @@ class HtmlExporterTest {
 
         assertTrue("<figure>" in html, "Expected <figure> wrapper")
         assertTrue("<video" in html, "Expected <video> tag")
+
         // No track tag expected since no CaptionTrack was provided
+
+        assertTrue("<track" in html, "Expected <track> for captions")
         assertTrue("<figcaption>Watch this</figcaption>" in html, "Expected visible figcaption")
     }
 

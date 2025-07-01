@@ -1,9 +1,5 @@
 package com.thekindred.kindrededitor.model
 
-/**
- * Represents a renderable element derived from a [PostDocument] block.
- * Each element corresponds to a visual or semantic unit that can be rendered in the UI or exported.
- */
 sealed class RenderElement {
 
     /**
@@ -67,3 +63,4 @@ sealed class RenderElement {
      */
     data class Embed(val url: String, val service: EmbedService, val caption: String?) : RenderElement()
 }
+
